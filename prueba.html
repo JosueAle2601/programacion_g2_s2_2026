@@ -3,9 +3,158 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Prueba</title>
+		<link rel="icon" type="image/x-icon" href="resources/sleeping_fox.png">
 	</head>
 	<body>
 		<h1>Hola Mundo!</h1>
 		<a href="index.html">Volver</a>
+
+		<div>
+			Contenido...
+		</div>
+
+		<header>
+			Contenido...
+		</header>
+
+		<footer>
+			Contenido...
+		</footer>
+
+		<main>
+			Contenido...
+		</main>
+
+		<section>
+			Contenido...
+		</section>
+
+		<article>
+			Contenido...
+		</article>
+
+		<nav>
+			Contenido...
+		</nav>
+
+		<ol>
+			<li>Opción 1</li>
+			<li>Opción 2</li>
+			<li>Opción 3</li>
+		</ol>
+
+		<ul>
+			<li>Opción 1</li>
+			<li>Opción 2</li>
+			<li>Opción 3</li>
+		</ul>
+
+		<table border="1">
+			<tr>
+				<td>Celda 1 1</td>
+				<td>Celda 1 2</td>
+				<td>Celda 1 3</td>
+			</tr>
+
+			<tr>
+				<td>Celda 2 1</td>
+				<td>Celda 2 2</td>
+				<td>Celda 2 3</td>
+			</tr>
+
+			<tr>
+				<td>Celda 3 1</td>
+				<td>Celda 3 2</td>
+				<td>Celda 3 3</td>
+			</tr>
+		</table>
+		
+		<table border="5">
+			<thead>
+				<tr>
+					<th>Celda 1 1</td>
+					<th>Celda 1 2</td>
+					<th>Celda 1 3</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>Celda 1 1</td>
+					<td>Celda 1 2</td>
+					<td>Celda 1 3</td>
+				</tr>
+
+				<tr>
+					<td>Celda 2 1</td>
+					<td>Celda 2 2</td>
+					<td>Celda 2 3</td>
+				</tr>
+
+				<tr>
+					<td>Celda 3 1</td>
+					<td>Celda 3 2</td>
+					<td>Celda 3 3</td>
+				</tr>
+			</tbody>
+
+			<tfoot>
+				<td colspan="2">Fin de la tabla</td>
+			</tfoot>
+		</table>
+
+		&lt; &gt; &#8706; &#128545;
+
+		<br>
+
+		<form action="" method="">
+			<label for="">Nombre: </label>
+			<input 
+				type="text"
+				name:"nombre"
+				placeholder="Ingrese el nombre"
+				minlength="3"
+				maxlength="20"
+				required
+			>
+			<label for="">Contraseña</label>
+			<input type="password" name="pwd" placeholder="Ingrese su contraseña">
+			<br>
+			<fieldset>
+				<legend>Datos básicos</legend>
+				<div>
+					<label for="">Edad</label>
+					<input type="number" name="edad" min="13" max="120">
+				</div>
+
+				<div>
+					<label for="">Fechas</label>
+					<input type="date" name="fecha">
+					<input type="datetime" name="fecha1">
+					<input type="datetime-local" name="fecha2">
+					<input type="month" name="mes">
+					<input type="week" name="semana">
+					<input type="time" name="hora">
+				</div>
+
+				<div>
+					<label for="">Color</label>
+					<input type="color" name="color1">
+					<input type="file" name="archivo">
+				</div>
+			</fieldset>
+
+			<div>
+				<input type="button" value="Normal">
+				<input type="reset" value="Limpiar">
+				<input type="submit" value="Enviar">
+				<br>
+				<button type="button">Normal</button>
+				<button type="reset">Limpiar</button>
+				<button type="submit">
+					Enviar <img src="resources/sleeping_fox.png" alt="Submit" width="34">
+				</button>
+			</div>
+		</form>
 	</body>
 </html>
