@@ -1,0 +1,39 @@
+.circle {
+	background-color: red;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	animation-name: anime;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes anime {
+	0% {
+		top: 0px;
+	}
+
+	25% {
+		left: 100vw
+	}
+
+	50% {
+		left: 0vw;
+		top: 33vh;
+	}
+
+	75% {
+		left: 100vw;
+		top: 77vh;
+	}
+
+	100% {
+		top: 100vh;
+		left: 0vw;
+	}
+}
