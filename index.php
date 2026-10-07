@@ -8,45 +8,58 @@ $conexDB = new mysqli($hostDB, $userDB, $pwdDB, $nameDB);
 
 if($conexDB->connect_error) {
 	print($conexDB->connect_error);
-	die(); //exit()
+	die();
 }
+?>
 
-echo 'Conexión exitosa!<br>';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Estudiantes</title>
+	<link rel="stylesheet" href="css/tarjetas.css">
+</head>
 
-$sql = "insert into estudiantes (codigo, nombre, email) values ('4444', 'Margarita', 'margo@test.com')";
-
-$resultDB = $conexDB->query($sql);
-
-if ($resultDB) {
-	echo 'Datos guardados!<br>';
-}
-
-$sql = "select * from estudiantes";
-$resultDB = $conexDB->query($sql);
-if ($resultDB->num_rows > 0) {
-	while($row = $resultDB->fetch_assoc()) {
-		echo "ID: ".$row["id"];
-		echo "Código: ".$row["codigo"];
-		echo "Nombre: ".$row["nombre"];
-		echo "Email: ".$row["email"];
-		echo "<br>";
-	}
-}
-
-$sql = "delete from estudiantes where id>=8";
-$resultDB = $conexDB->query($sql);
-if ($resultDB) {
-	echo "Datos eliminados! <br>";
-}
-
-$sql = "update estudiantes set ";
-$sql .= " nombre = 'Gabriel Agreste', ";
-$sql .= " email = 'gabriel.agreste@agreste.com' ";
-$sql .= " where id = 3";
-$resultDB = $conexDB->query($sql);
-if ($resultDB) {
-	echo 'Datos actualizados! <br>';
-}
-
-
-$conexDB->close();
+<body>
+	<h1>Lista de Estudiantes</h1>
+	<?php
+		if($_GET['error_insert']) {
+			echo '<div>Error al guardar los datos</div>';
+		}
+	?>
+	<a href="formulario.php">Registrar un estudiante</a>
+	<section class="tarjetas">
+		<?php
+			$sql = "select * from estudiantes";
+			$result = $conexDB->query($sql);
+			
+			if($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					echo '<div class="tarjeta">';
+					echo '	<p>';
+					echo '		<b>Codigo: </b><span>'.$row['codigo'].'</span>';
+					echo '	</p>';
+					echo '';
+					echo '	<p>';
+					echo '		<b>Nombre: </b><span>'.$row['nombre'].'</span>';
+					echo '	</p>';
+					echo '';
+					echo '	<p>';
+					echo '		<b>Email: </b><span>'.$row['email'].'</span>';
+					echo '	</p>';
+					echo '';
+					echo '	<div>';
+					echo '		<a href="#">Borrar</a>';
+					echo '		<a href="#">Modificar</a>';
+					echo '	</div>';
+					echo '</div>';
+				}
+		?>
+		
+	</section>
+	<?php
+		$conexDB->close();}
+	?>
+</body>
+</html>
