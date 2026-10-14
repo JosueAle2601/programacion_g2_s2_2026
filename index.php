@@ -24,7 +24,7 @@ if($conexDB->connect_error) {
 <body>
 	<h1>Lista de Estudiantes</h1>
 	<?php
-		if($_GET['error_insert']) {
+		if(!empty($_GET['error_insert'])) {
 			echo '<div>Error al guardar los datos</div>';
 		}
 	?>
@@ -50,16 +50,17 @@ if($conexDB->connect_error) {
 					echo '	</p>';
 					echo '';
 					echo '	<div>';
-					echo '		<a href="#">Borrar</a>';
-					echo '		<a href="#">Modificar</a>';
+					echo '		<a href="operaciones/borrar.php?id='.$row['id'].'">Borrar</a>';
+					echo '		<a href="formulario.php?id='.$row['id'].'">Modificar</a>';
 					echo '	</div>';
 					echo '</div>';
 				}
+			}
 		?>
 		
 	</section>
 	<?php
-		$conexDB->close();}
+		$conexDB->close();
 	?>
 </body>
 </html>
